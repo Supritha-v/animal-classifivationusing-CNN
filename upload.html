@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <div class="d-flex flex-column min-vh-100" style="background-color: #ececec !important;">
+
+        <nav class="navbar navbar-expand-lg bg-dark border-dark border-bottom">
+            <div class="container-fluid mx-5">
+                <a class="navbar-brand text-light fw-bold fs-5" href="#">
+                    <i class="fa-solid fa-shield-cat"></i> WILD ANIMALS</a> 
+                <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars text-light"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-decoration-underline link-offset-2 active text-light fw-bold"
+                                aria-current="page" href="/upload">Upload</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white fw-bold" href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        {% if success %}
+        <div class="position-fixed top-0 toastae start-50 translate-middle-x p-3" style="z-index: 11">
+            <div id="liveToast1" class="toast bg-success bg-opacity-75 hide" role="alert" aria-live="assertive"
+                aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body ms-auto text-white">
+                        {{success}}
+                    </div>
+                    <button type="button" class="btn-close shadow-none btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="container my-4">
+
+            
+
+            <form method="get" id="uploadvideoform" action="/process" enctype="multipart/form-data">
+
+                <div class="row justify-content-center mb-3 mt-4">
+
+                    <!--<div class="col-md-8 position-relative">
+                        <label for="video" class="form-label text-dark">Video:</label>
+                        <input type="file" class="form-control shadow-none border-dark bg-white" name="video" id="video"
+                            accept="video/*">
+                        <div class="invalid-tooltip rounded-3 ">
+                            * Select Video
+                        </div>
+                    </div>-->
+
+                    <div class="col-md-4">
+                        <label class="form-label d-block" >&nbsp;</label>
+                        <button type="submit" class="btn btn-dark shadow-none w-100" onclick="process">Start Application</button>
+                    </div>
+
+                </div>
+
+                
+		
+
+               
+                
+
+                <!-- <div class="row justify-content-center">
+                    <div class="col-md-4 mt-3">
+                        <h5 class="text-center">Grayscale Image</h5>
+                        <img src="../static/docs/{{image}}" alt="image" class="img-fluid img-thumbnail">
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <h5 class="text-center">Binarized Image</h5>
+                        <img src="../static/docs/{{image}}" alt="image" class="img-fluid img-thumbnail">
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <h5 class="text-center">Thresholded Image</h5>
+                        <img src="../static/docs/{{image}}" alt="image" class="img-fluid img-thumbnail">
+                    </div>
+                </div>
+
+
+                <div class="row justify-content-center"> 
+                    <div class="col-md-12 my-5">
+                        <h3 class="text-center text-decoration-underline link-offset-2">Processing</h3>
+                    </div>
+                </div> -->
+
+               
+                
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+
+
+    
+
+</body>
+
+<!-- <script>							
+    function process(){
+        window.location="process";	
+    }
+</script> -->
+
+</html>
